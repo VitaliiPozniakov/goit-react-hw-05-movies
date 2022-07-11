@@ -16,8 +16,10 @@ function MovieDetailsPage() {
   const [movieInfo, setMovieInfo] = useState(null);
 
   useEffect(() => {
-    API.fetchMovieDetails(movieId).then(
-      ({
+
+async function fetchAndSetDataFromBackend () {
+    const fetchMovieDetails = await API.fetchMovieDetails(movieId)
+    const {
         original_title,
         genres,
         overview,
@@ -25,21 +27,32 @@ function MovieDetailsPage() {
         release_date,
         vote_average,
         vote_count,
-      }) => {
-        const movieInfo = {
-          title: original_title,
-          genres: genres,
-          description: overview,
-          poster: poster_path,
-          releaseDate: release_date,
-          voteAverage: vote_average,
-          voteCount: vote_count,
-        };
+      } = fetchMovieDetails
+    
+      const movieInfo = {
+        title: original_title,
+        genres: genres,
+        description: overview,
+        poster: poster_path,
+        releaseDate: release_date,
+        voteAverage: vote_average,
+        voteCount: vote_count,
+      };
+      setMovieInfo(movieInfo)
+}
 
-        return setMovieInfo(movieInfo);
-      },
-    );
-  }, [movieId]);
+try {
+   
+    fetchAndSetDataFromBackend();
+
+  
+  } catch (err) {
+  //   setError(err.message);
+  }
+}, [movieId]);
+
+
+
 
   return (
     <>
