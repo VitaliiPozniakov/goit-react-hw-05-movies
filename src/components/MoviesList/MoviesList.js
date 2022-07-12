@@ -11,7 +11,6 @@ export default function MoviesList ({movies}) {
               key={id}
               id={id}
               title={title}
-          
             />
           );
         })}

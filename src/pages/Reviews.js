@@ -1,24 +1,23 @@
 import { useState, useEffect } from 'react';
-import { useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import * as API from '../services/api';
 import ReviewsList from 'components/ReviewsList';
-
+import Container from 'components/Container';
 
 function ReviewsPage() {
-
   const { movieId } = useParams();
   const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
+    async function fetchAndSetDataFromBackend() {
+      const { results } = await API.fetchMovieReviews(movieId);
+      const reviewsArray = [];
 
-async function fetchAndSetDataFromBackend () {
-    const {results} = await API.fetchMovieReviews(movieId)
-    const reviewsArray = [];
-   
-    results.map(({ id, author, content }) => {
+      // console.log(results)
+
+      results.map(({ id, author, content }) => {
         const review = {
-          
-      id,
+          id,
           author,
           text: content,
         };
@@ -27,27 +26,26 @@ async function fetchAndSetDataFromBackend () {
       });
 
       setReviews(reviewsArray);
-}
+    }
 
-try {
-   
-    fetchAndSetDataFromBackend();
+    try {
+      fetchAndSetDataFromBackend();
+    } catch (err) {
+      //   setError(err.message);
+    }
+  }, [movieId]);
 
-  
-  } catch (err) {
-  //   setError(err.message);
-  }
-}, [movieId]);
+  // console.log(reviews)
 
-
-
-  return (
-    <>
-      {reviews &&   <ReviewsList reviews={reviews} />}
-
-    </>
+  return reviews && reviews.length > 0 ? (
+    <ReviewsList reviews={reviews} />
+  ) : (
+    <Container>
+      <p>We don't have any reviews for this movie.</p>
+    </Container>
   );
+
+
 }
 
 export default ReviewsPage;
-

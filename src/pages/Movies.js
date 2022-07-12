@@ -6,14 +6,12 @@ import MoviesList from 'components/MoviesList';
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
-//   const [error, setError] = useState(null);
-  const [query, setQuery] = useState('')
+  //   const [error, setError] = useState(null);
+  const [query, setQuery] = useState('');
 
-  const getQuery = (query) => {
- setQuery(query)
-  }
-
-
+  const getQuery = query => {
+    setQuery(query);
+  };
 
   useEffect(() => {
     async function fetchAndSetDataFromBackend() {
@@ -21,30 +19,24 @@ export default function MoviesPage() {
         return;
       }
       const fetchMovies = await API.fetchMovies(query);
-    //   console.log(fetchMovies.results);
+      //   console.log(fetchMovies.results);
 
       const moviesArr = [];
 
-      fetchMovies.results.map(
-        ({ id, original_title }) => {
-          const movie = {
-            id,
-            title: original_title,
-          
-          };
-          return moviesArr.push(movie);
-        }
-      );
+      fetchMovies.results.map(({ id, original_title }) => {
+        const movie = {
+          id,
+          title: original_title,
+        };
+        return moviesArr.push(movie);
+      });
       setMovies(moviesArr);
     }
 
     try {
-   
       fetchAndSetDataFromBackend();
-
-    
     } catch (err) {
-    //   setError(err.message);
+      //   setError(err.message);
     }
   }, [query]);
 
@@ -52,7 +44,7 @@ export default function MoviesPage() {
 
   return (
     <>
-      <SearchBar getQuery={getQuery}/>
+      <SearchBar getQuery={getQuery} />
       {movies && (
         <Container>
           <MoviesList movies={movies} />

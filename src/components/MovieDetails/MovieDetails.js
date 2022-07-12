@@ -9,16 +9,16 @@ import {
   MainWrapper,
   Poster,
   InfoWrapper,
-  TitleWrapper,
+
   Title,
   ReleaseDate,
   GenresList,
   GenresItem,
   Description,
-  VoteWrapper,
+
   VoteAverage,
-  VoteCount,
-  Value,
+
+  SubTitle,
   AdditionalWrapper,
   AdditionalTitle,
   NavigationsList,
@@ -32,6 +32,8 @@ function MovieDetails({ movieInfo }) {
 //   const navigate = useNavigate();
 //   const subLocation = location.state.from;
 
+// console.log(movieInfo)
+
   const {
     title,
     genres,
@@ -39,10 +41,10 @@ function MovieDetails({ movieInfo }) {
     poster,
     releaseDate,
     voteAverage,
-    voteCount,
   } = movieInfo;
 
 //   const onGoBack = () => navigate(location?.state?.from ?? '/');
+const userScore = voteAverage * 10
 
   return (
     <Container>
@@ -53,34 +55,28 @@ function MovieDetails({ movieInfo }) {
 
       <MainWrapper>
         <Poster
-          src={poster && `https://image.tmdb.org/t/p/w500/${poster}` }
+          src={`https://image.tmdb.org/t/p/w500/${poster}` }
           alt={title}
         />
         <InfoWrapper>
-          <TitleWrapper>
+        
             <Title>{title}</Title>
-            <ReleaseDate>{releaseDate}</ReleaseDate>
-          </TitleWrapper>
-          <GenresList>
+            <ReleaseDate><SubTitle>Release date: </SubTitle>{releaseDate}</ReleaseDate>
+            <VoteAverage> <SubTitle>User Score: </SubTitle>{userScore}%</VoteAverage>
+        
+          <GenresList> <SubTitle>Genres: </SubTitle>
             {genres &&
               genres.map(({ name, id }) => (
-                <GenresItem key={id}>{name}</GenresItem>
+                <GenresItem key={id}> {name}</GenresItem>
               ))}
           </GenresList>
-          <Description>{description}</Description>
-          <VoteWrapper>
-            <VoteAverage>
-              Vote average: <Value>{voteAverage}</Value>
-            </VoteAverage>
-            <VoteCount>
-              Vote count: <Value>{voteCount}</Value>
-            </VoteCount>
-          </VoteWrapper>
+          <Description>Overview: {description}</Description>
+         
         </InfoWrapper>
       </MainWrapper>
 
       <AdditionalWrapper>
-        <AdditionalTitle>Additional Information</AdditionalTitle>
+        <AdditionalTitle>Additional Information:</AdditionalTitle>
         <NavigationsList>
           <NavigationsItem>
             <CustomLink to="cast" >

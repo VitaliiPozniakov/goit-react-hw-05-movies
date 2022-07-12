@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 export const ContainerWrapper = styled.div`
 padding-left: 15px;
 padding-right: 15px;
+padding-top: 15px;
 margin: 0 auto;
 @media screen and (min-width: 480px) {
   width: 480px;

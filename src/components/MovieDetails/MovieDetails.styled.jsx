@@ -12,70 +12,122 @@ export const Label = styled.span`
 `;
 
 export const MainWrapper = styled.div`
+margin-bottom: 30px;
+@media (min-width: 768px) {
+  display: flex;
+  justify-content: space-between;
+}
 
 `;
 
 export const Poster = styled.img`
-
+width: 250 px;
+@media (min-width: 768px) {
+    width: 300px;
+    margin-right: 10px;
+  }
 `;
 
 export const InfoWrapper = styled.div`
+margin-bottom: 30px;
+
+
+
 
 `;
 
-export const TitleWrapper = styled.div`
 
-`;
 
 export const Title = styled.h2`
-
-`;
-
-export const ReleaseDate = styled.p`
-
-`;
-
-export const GenresList = styled.ul`
-
-`;
-
-export const GenresItem = styled.li`
-
-`;
-
-export const Description = styled.p`
-
-`;
-
-export const VoteWrapper = styled.div`
+font-size: 30px;
+color: ;
+margin-bottom: 15px;
 
 `;
 
 export const VoteAverage = styled.p`
- 
+margin-bottom: 10px;
 `;
 
-export const VoteCount = styled.p`
+export const SubTitle = styled.span`
+font-size: 15px;
+font-weight: 700;
 
 `;
 
-export const Value = styled.span`
+export const ReleaseDate = styled.p`
+margin-bottom: 10px;
 
 `;
 
-export const AdditionalWrapper = styled.div``;
+export const GenresList = styled.ul`
+margin-bottom: 30px;
+display: flex;
+
+`;
+
+export const GenresItem = styled.li`
+font-weight: 400;
+font-size: 15px;
+margin-right: 15px;
+:last-child {
+  margin-right: 0;
+}
+
+`;
+
+export const Description = styled.p`
+font-size: 15px;
+margin-bottom: 50px;
+
+`;
+
+
+
+
+
+export const AdditionalWrapper = styled.div`
+box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 10px;
+`;
 
 export const AdditionalTitle = styled.p`
-
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 15px;
 `;
 
-export const NavigationsList = styled.ul``;
+export const NavigationsList = styled.ul`
+list-style: square;
+margin-left: 15px;
+`;
 
 export const NavigationsItem = styled.li`
-
+margin-bottom: 15px;
+:last-child {
+  margin-bottom: 0;
+}
 `;
 
 export const CustomLink = styled(NavLink)`
+display: inline-block;
+text-decoration: none;
 
+color: #2a363b;
+  font-size: 15px;
+  font-weight: 700;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.active {
+    color: #3f51b5;
+    text-decoration: underline;
+  }
+
+  &:hover{
+      color: #3f51b5;
+  }
 `;
 
