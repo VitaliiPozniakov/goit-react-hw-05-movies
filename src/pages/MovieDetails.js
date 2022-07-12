@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useParams} from 'react-router-dom';
+import { useParams, Route, Routes} from 'react-router-dom';
 import * as API from '../services/api';
 import MovieDetails from 'components/MovieDetails';
+import ReviewsPage from './Reviews';
+import CastPage from './Cast';
 // import Loader from 'components/Loader';
 
 // const Cast = lazy(() =>
@@ -12,6 +14,7 @@ import MovieDetails from 'components/MovieDetails';
 // );
 
 function MovieDetailsPage() {
+  // console.log(useParams())
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState(null);
 
@@ -58,12 +61,12 @@ try {
     <>
       {movieInfo && <MovieDetails movieInfo={movieInfo} />}
 
-      {/* <Suspense fallback={<Loader />}>
+
         <Routes>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
+          <Route path="cast" element={<CastPage/>} />
+          <Route path="reviews" element={<ReviewsPage />} />
         </Routes>
-      </Suspense> */}
+
     </>
   );
 }

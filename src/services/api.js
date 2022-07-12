@@ -31,8 +31,8 @@ export function fetchMovieCredits(movieId) {
   );
 }
 
-export function fetchMovieReviews(movieId, page) {
+export function fetchMovieReviews(movieId) {
   return fetchWithErrorHandling(
-    `${BASE_URL}/3/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=${page}`
+    `${BASE_URL}/3/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
   );
 }

@@ -84,12 +84,12 @@ function MovieDetails({ movieInfo }) {
         <NavigationsList>
           <NavigationsItem>
             <CustomLink to="cast" >
-        
+        Cast
             </CustomLink>
           </NavigationsItem>
           <NavigationsItem>
             <CustomLink to="reviews" >
-             
+             Reviews
             </CustomLink>
           </NavigationsItem>
         </NavigationsList>

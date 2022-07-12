@@ -7,13 +7,8 @@ import {  Item,
     Value,CustomLink} from './MovieCard.styled'
 import propTypes from 'prop-types';
 
-
-
 function MovieCard({ id, title, poster, voteAverage, voteCount }) {
 
-
-
-  
     return (
       <Item>
 <CustomLink to={`/movies/${id}`}>
