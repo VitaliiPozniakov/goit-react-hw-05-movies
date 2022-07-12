@@ -15,23 +15,5 @@ export const Title = styled.h2`
 
 `;
 
-export const Img = styled.img`
 
-`;
-
-export const VoteWrapper = styled.div`
-
-`;
-
-export const VoteAverage = styled.p`
-
-`;
-
-export const VoteCount = styled.p`
-
-`;
-
-export const Value = styled.span`
-
-`;
 

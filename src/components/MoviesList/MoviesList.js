@@ -1,21 +1,29 @@
 import { Wrapper } from "./MoviesList.styled";
 import MovieCard from "components/MovieCard";
+import propTypes from 'prop-types'
 
 export default function MoviesList ({movies}) {
     return (
         <Wrapper>
-        {movies.map(({ id, title, poster, voteAverage, voteCount }) => {
+        {movies.map(({ id, title }) => {
           return (
             <MovieCard
               key={id}
               id={id}
               title={title}
-              poster={poster}
-              voteAverage={voteAverage}
-              voteCount={voteCount}
+          
             />
           );
         })}
       </Wrapper>
     )
 }
+
+MoviesList.prototype = {
+  movies: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number,
+      title: propTypes.string,
+    }),
+  ).isRequired,
+};

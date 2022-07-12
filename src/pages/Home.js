@@ -16,13 +16,11 @@ async function fetchAndSetDataFromBackend () {
  const {results} = await API.fetchTrending()
  const moviesArray = []
 
- results.map(({id, original_title, poster_path, vote_average, vote_count})=>{
+ results.map(({id, original_title})=>{
      const movie = {
          id,
          title: original_title,
-         poster: poster_path,
-         voteAverage: vote_average,
-         voteCount: vote_count,
+   
        };
        return moviesArray.push(movie);
 })
