@@ -41,10 +41,10 @@ export default function MoviesPage() {
     }
 
     try {
-      // setIsLoading(prevIsLoading => !prevIsLoading);
+   
       fetchAndSetDataFromBackend();
 
-      // setIsLoading(prevIsLoading => !prevIsLoading);
+    
     } catch (err) {
     //   setError(err.message);
     }
