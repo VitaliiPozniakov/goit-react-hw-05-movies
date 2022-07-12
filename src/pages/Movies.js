@@ -3,15 +3,19 @@ import * as API from '../services/api';
 import SearchBar from 'components/SearchBar';
 import Container from 'components/Container';
 import MoviesList from 'components/MoviesList';
+import { useLocation } from 'react-router-dom';
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
   //   const [error, setError] = useState(null);
-  const [query, setQuery] = useState('');
+  
+  // const [query, setQuery] = useState('');
+  // const getQuery = query => {
+  //   setQuery(query);
+  // };
 
-  const getQuery = query => {
-    setQuery(query);
-  };
+  const { search } = useLocation();
+  const query = new URLSearchParams(search).get('query') ?? '';
 
   useEffect(() => {
     async function fetchAndSetDataFromBackend() {
@@ -44,7 +48,7 @@ export default function MoviesPage() {
 
   return (
     <>
-      <SearchBar getQuery={getQuery} />
+      <SearchBar />
       {movies && (
         <Container>
           <MoviesList movies={movies} />

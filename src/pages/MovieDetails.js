@@ -1,17 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense  } from 'react';
 import { useParams, Route, Routes } from 'react-router-dom';
 import * as API from '../services/api';
 import MovieDetails from 'components/MovieDetails';
-import ReviewsPage from './Reviews';
-import CastPage from './Cast';
-// import Loader from 'components/Loader';
+import Loader from 'components/Loader';
 
-// const Cast = lazy(() =>
-//   import('./Cast.js' /* webpackChunkName: "cast-view" */),
-// );
-// const Reviews = lazy(() =>
-//   import('./Reviews.js' /* webpackChunkName: "review-view" */),
-// );
+
+const CastPage = lazy(() =>
+  import('./Cast.js' /* webpackChunkName: "cast-page" */),
+);
+const ReviewsPage = lazy(() =>
+  import('./Reviews.js' /* webpackChunkName: "review-page" */),
+);
 
 function MovieDetailsPage() {
   // console.log(useParams())
@@ -54,10 +53,12 @@ function MovieDetailsPage() {
     <>
       {movieInfo && <MovieDetails movieInfo={movieInfo} />}
 
+<Suspense fallback={<Loader/>}>
       <Routes>
         <Route path="cast" element={<CastPage />} />
         <Route path="reviews" element={<ReviewsPage />} />
       </Routes>
+      </Suspense>
     </>
   );
 }

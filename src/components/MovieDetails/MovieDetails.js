@@ -1,6 +1,6 @@
 // import { useLocation, useNavigate } from 'react-router-dom';
 import propTypes from 'prop-types';
-
+import { useLocation, useNavigate } from 'react-router-dom';
 import Container from 'components/Container';
 
 import {
@@ -28,11 +28,11 @@ import {
 
 
 function MovieDetails({ movieInfo }) {
-//   const location = useLocation();
-//   const navigate = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
 //   const subLocation = location.state.from;
 
-// console.log(movieInfo)
+// console.log(location)
 
   const {
     title,
@@ -43,12 +43,13 @@ function MovieDetails({ movieInfo }) {
     voteAverage,
   } = movieInfo;
 
-//   const onGoBack = () => navigate(location?.state?.from ?? '/');
+  const onGoBackBtn = () => navigate(location?.state?.from ?? '/');
+
 const userScore = voteAverage * 10
 
   return (
     <Container>
-      <BtnGoBack type="button" >
+      <BtnGoBack type="button" onClick={onGoBackBtn}>
        
         <Label>Go back</Label>
       </BtnGoBack>
