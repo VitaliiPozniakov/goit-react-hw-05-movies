@@ -31,7 +31,7 @@ function MovieDetails({ movieInfo }) {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const subLocation = location.state.from;
+  const subLocation = location?.state?.from;
 
 // console.log(subLocation)
 
@@ -44,7 +44,7 @@ function MovieDetails({ movieInfo }) {
     voteAverage,
   } = movieInfo;
 
-  const onGoBackBtn = () => navigate(location?.state?.from ?? '/');
+  const onGoBackBtn = () => navigate(location?.state?.from?.location ?? '/');
 
 const userScore = voteAverage * 10
 
@@ -52,7 +52,7 @@ const userScore = voteAverage * 10
     <Container>
       <BtnGoBack type="button" onClick={onGoBackBtn}>
        
-        <Label>Go back</Label>
+        <Label>{location?.state?.from?.label ?? 'Go back'}</Label>
       </BtnGoBack>
 
       <MainWrapper>
@@ -81,12 +81,12 @@ const userScore = voteAverage * 10
         <AdditionalTitle>Additional Information:</AdditionalTitle>
         <NavigationsList>
           <NavigationsItem>
-            <CustomLink to="cast" state={{ from: subLocation }}>
+            <CustomLink to="cast" state={{ from: location}}>
         Cast
             </CustomLink>
           </NavigationsItem>
           <NavigationsItem>
-            <CustomLink to="reviews" state={{ from: subLocation }}>
+            <CustomLink to="reviews" state={{ from: location }}>
              Reviews
             </CustomLink>
           </NavigationsItem>

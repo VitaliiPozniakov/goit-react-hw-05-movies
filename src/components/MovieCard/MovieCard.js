@@ -5,10 +5,10 @@ import { useLocation } from 'react-router-dom';
 
 
 function MovieCard({ id, title }) {
-  const location = useLocation();
+const location = useLocation()
   return <>
     {title && (<Item>
-      <CustomLink to={`/movies/${id}`} state={{ from: location }}>
+      <CustomLink to={`/movies/${id}`} state={{ from :{location, label: 'Back to sorted films'} }}>
         <Title>{title}</Title>
       </CustomLink>
     </Item>)}</>
