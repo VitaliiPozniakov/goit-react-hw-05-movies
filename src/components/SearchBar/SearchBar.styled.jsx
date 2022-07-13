@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-export const Form = styled.div`
+export const Wrapper = styled.div`
 display: flex;
-align-items: center;
+align-items: baseline;
 
 @media screen and (min-width: 768px) {
     width: 700px;
@@ -23,6 +23,7 @@ border: 1px solid rgba(33, 33, 33, 0.2);
 border-radius: 4px;
 transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
   outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 10px;
 
 @media screen and (min-width: 768px) {
   width: 500px;
