@@ -8,7 +8,7 @@ function MovieCard({ id, title }) {
 const location = useLocation()
   return <>
     {title && (<Item>
-      <CustomLink to={`/movies/${id}`} state={{ from :{location, label: 'Back to sorted films'} }}>
+      <CustomLink to={`/movies/${id}`} state={{ from: location }}>
         <Title>{title}</Title>
       </CustomLink>
     </Item>)}</>
