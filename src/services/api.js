@@ -1,5 +1,4 @@
 const API_KEY = 'c82323a9bebf6624949ce9fae3cb7c73';
-
 const BASE_URL = 'https://api.themoviedb.org';
 
 async function fetchWithErrorHandling(url = '', config = {}) {
@@ -13,9 +12,9 @@ export function fetchTrending() {
   );
 }
 
-export function fetchMovies(query, page = 1) {
+export function fetchMovies(query) {
   return fetchWithErrorHandling(
-    `${BASE_URL}/3/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=${page}&include_adult=false`
+    `${BASE_URL}/3/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`
   );
 }
 

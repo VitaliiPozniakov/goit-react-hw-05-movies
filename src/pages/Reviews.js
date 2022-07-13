@@ -13,8 +13,6 @@ function ReviewsPage() {
       const { results } = await API.fetchMovieReviews(movieId);
       const reviewsArray = [];
 
-      // console.log(results)
-
       results.map(({ id, author, content }) => {
         const review = {
           id,
@@ -35,8 +33,6 @@ function ReviewsPage() {
     }
   }, [movieId]);
 
-  // console.log(reviews)
-
   return reviews && reviews.length > 0 ? (
     <ReviewsList reviews={reviews} />
   ) : (
@@ -44,8 +40,6 @@ function ReviewsPage() {
       <p>We don't have any reviews for this movie.</p>
     </Container>
   );
-
-
 }
 
 export default ReviewsPage;

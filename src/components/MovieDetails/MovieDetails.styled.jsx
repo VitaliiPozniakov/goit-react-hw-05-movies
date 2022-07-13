@@ -12,11 +12,16 @@ export const Label = styled.span`
 `;
 
 export const MainWrapper = styled.div`
-margin-bottom: 30px;
+margin-bottom: 10px;
 @media (min-width: 768px) {
   display: flex;
   justify-content: space-between;
 }
+
+box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 
 `;
 
@@ -52,7 +57,7 @@ margin-bottom: 10px;
 export const SubTitle = styled.span`
 font-size: 15px;
 font-weight: 700;
-
+margin-right: 2px;
 `;
 
 export const ReleaseDate = styled.p`
@@ -69,7 +74,7 @@ display: flex;
 export const GenresItem = styled.li`
 font-weight: 400;
 font-size: 15px;
-margin-right: 15px;
+margin-right: 2px;
 :last-child {
   margin-right: 0;
 }
@@ -98,6 +103,8 @@ export const AdditionalTitle = styled.p`
 font-size: 18px;
 font-weight: 700;
 margin-bottom: 15px;
+
+text-align: center;
 `;
 
 export const NavigationsList = styled.ul`

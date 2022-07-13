@@ -30,7 +30,8 @@ import {
 function MovieDetails({ movieInfo }) {
   const location = useLocation();
   const navigate = useNavigate();
-//   const subLocation = location.state.from;
+
+  // const subLocation = location.state.from;
 
 // console.log(location)
 
@@ -62,13 +63,13 @@ const userScore = voteAverage * 10
         <InfoWrapper>
         
             <Title>{title}</Title>
-            <ReleaseDate><SubTitle>Release date: </SubTitle>{releaseDate}</ReleaseDate>
-            <VoteAverage> <SubTitle>User Score: </SubTitle>{userScore}%</VoteAverage>
+            <ReleaseDate><SubTitle>Release date:</SubTitle>{releaseDate}</ReleaseDate>
+            <VoteAverage> <SubTitle>User Score:</SubTitle>{userScore}%</VoteAverage>
         
-          <GenresList> <SubTitle>Genres: </SubTitle>
+          <GenresList> <SubTitle>Genres:</SubTitle>
             {genres &&
               genres.map(({ name, id }) => (
-                <GenresItem key={id}> {name}</GenresItem>
+                <GenresItem key={id}> {name}, </GenresItem>
               ))}
           </GenresList>
           <Description>Overview: {description}</Description>
@@ -80,12 +81,12 @@ const userScore = voteAverage * 10
         <AdditionalTitle>Additional Information:</AdditionalTitle>
         <NavigationsList>
           <NavigationsItem>
-            <CustomLink to="cast" >
+            <CustomLink to="cast" state={{ from: location }}>
         Cast
             </CustomLink>
           </NavigationsItem>
           <NavigationsItem>
-            <CustomLink to="reviews" >
+            <CustomLink to="reviews" state={{ from: location }}>
              Reviews
             </CustomLink>
           </NavigationsItem>

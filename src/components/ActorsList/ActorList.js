@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 import Container from 'components/Container';
-import { List, Item, PhotoWrapper, Photo, Name } from './ActorList.styled';
+import { List, Item, PhotoWrapper, Photo, NameWrapper, Name } from './ActorList.styled';
 
 export default function ActorsList ({actors}) {
 // console.log(actors)
@@ -18,7 +18,9 @@ export default function ActorsList ({actors}) {
                       alt={name}
                     />
                   </PhotoWrapper>
+                  <NameWrapper>
                   <Name>{name}</Name>
+                  </NameWrapper>
                 </Item>
               );
             })}
