@@ -31,9 +31,9 @@ function MovieDetails({ movieInfo }) {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // const subLocation = location.state.from;
+  const subLocation = location.state.from;
 
-// console.log(location)
+// console.log(subLocation)
 
   const {
     title,
@@ -81,12 +81,12 @@ const userScore = voteAverage * 10
         <AdditionalTitle>Additional Information:</AdditionalTitle>
         <NavigationsList>
           <NavigationsItem>
-            <CustomLink to="cast" state={{ from: location }}>
+            <CustomLink to="cast" state={{ from: subLocation }}>
         Cast
             </CustomLink>
           </NavigationsItem>
           <NavigationsItem>
-            <CustomLink to="reviews" state={{ from: location }}>
+            <CustomLink to="reviews" state={{ from: subLocation }}>
              Reviews
             </CustomLink>
           </NavigationsItem>
