@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.7ceb2963.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.beb167b3.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.c149a9ad.js",
     "static/js/266.5840b2bf.chunk.js": "/goit-react-hw-05-movies/static/js/266.5840b2bf.chunk.js",
-    "movies-page.js": "/goit-react-hw-05-movies/static/js/movies-page.f116d6a5.chunk.js",
+    "movies-page.js": "/goit-react-hw-05-movies/static/js/movies-page.88cbb12d.chunk.js",
     "movie-details-page.js": "/goit-react-hw-05-movies/static/js/movie-details-page.b9971571.chunk.js",
     "cast-page.js": "/goit-react-hw-05-movies/static/js/cast-page.7bd0535a.chunk.js",
     "review-page.js": "/goit-react-hw-05-movies/static/js/review-page.487b4c73.chunk.js",
     "static/js/105.56eaffcb.chunk.js": "/goit-react-hw-05-movies/static/js/105.56eaffcb.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.7ceb2963.css.map": "/goit-react-hw-05-movies/static/css/main.7ceb2963.css.map",
-    "main.beb167b3.js.map": "/goit-react-hw-05-movies/static/js/main.beb167b3.js.map",
+    "main.c149a9ad.js.map": "/goit-react-hw-05-movies/static/js/main.c149a9ad.js.map",
     "266.5840b2bf.chunk.js.map": "/goit-react-hw-05-movies/static/js/266.5840b2bf.chunk.js.map",
-    "movies-page.f116d6a5.chunk.js.map": "/goit-react-hw-05-movies/static/js/movies-page.f116d6a5.chunk.js.map",
+    "movies-page.88cbb12d.chunk.js.map": "/goit-react-hw-05-movies/static/js/movies-page.88cbb12d.chunk.js.map",
     "movie-details-page.b9971571.chunk.js.map": "/goit-react-hw-05-movies/static/js/movie-details-page.b9971571.chunk.js.map",
     "cast-page.7bd0535a.chunk.js.map": "/goit-react-hw-05-movies/static/js/cast-page.7bd0535a.chunk.js.map",
     "review-page.487b4c73.chunk.js.map": "/goit-react-hw-05-movies/static/js/review-page.487b4c73.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.7ceb2963.css",
-    "static/js/main.beb167b3.js"
+    "static/js/main.c149a9ad.js"
   ]
 }
