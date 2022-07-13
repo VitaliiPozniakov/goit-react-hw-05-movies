@@ -9,15 +9,12 @@ import {
   MainWrapper,
   Poster,
   InfoWrapper,
-
   Title,
   ReleaseDate,
   GenresList,
   GenresItem,
   Description,
-
   VoteAverage,
-
   SubTitle,
   AdditionalWrapper,
   AdditionalTitle,

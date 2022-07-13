@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
   //   const [error, setError] = useState(null);
-  
+
   // const [query, setQuery] = useState('');
   // const getQuery = query => {
   //   setQuery(query);
@@ -47,13 +47,9 @@ export default function MoviesPage() {
   // console.log(movies)
 
   return (
-    <>
+    <Container>
       <SearchBar />
-      {movies && (
-        <Container>
-          <MoviesList movies={movies} />
-        </Container>
-      )}
-    </>
+      {movies && <MoviesList movies={movies} />}
+    </Container>
   );
 }

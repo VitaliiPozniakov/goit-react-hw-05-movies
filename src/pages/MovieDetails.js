@@ -3,8 +3,6 @@ import { useParams, Route, Routes } from 'react-router-dom';
 import * as API from '../services/api';
 import MovieDetails from 'components/MovieDetails';
 import Loader from 'components/Loader';
-
-
 const CastPage = lazy(() =>
   import('./Cast.js' /* webpackChunkName: "cast-page" */),
 );

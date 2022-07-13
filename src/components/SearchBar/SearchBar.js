@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import {Input, Btn, Form} from './SearchBar.styled.jsx'
 
 export default function SearchBar({ getQuery }) {
   const location = useLocation();
@@ -19,9 +20,9 @@ export default function SearchBar({ getQuery }) {
 //   console.log(location);
 
   return (
-    <form onSubmit={onSubmitClick}>
-      <input name="searchQuery"></input>
-      <button type="submit">Search</button>
-    </form>
+    <Form onSubmit={onSubmitClick}>
+      <Input name="searchQuery"></Input>
+      <Btn type="submit">Search</Btn>
+    </Form>
   );
 }
