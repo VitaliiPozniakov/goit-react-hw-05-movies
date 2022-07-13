@@ -56,9 +56,9 @@ height: 40px;
 margin-left: auto ;
 
 
-// transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-//   background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-// }
+transition: color,background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 &:hover,
 &:focus {
