@@ -57,13 +57,15 @@ export const Btn = styled.button`
 
   transition: color, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  @media (min-width: 768px) {
+    width: 100px;
+  }
+
   &:hover,
   &:focus {
     background-color: #3f51b5;
     color: #ffffffff;
-
-    @media (min-width: 768px) {
-      width: 100px;
-    }
   }
+
+
 `;
