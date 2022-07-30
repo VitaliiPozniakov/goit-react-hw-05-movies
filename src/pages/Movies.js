@@ -27,10 +27,11 @@ export default function MoviesPage() {
 
       const moviesArr = [];
 
-      fetchMovies.results.map(({ id, original_title }) => {
+      fetchMovies.results.map(({ id, original_title, poster_path }) => {
         const movie = {
           id,
           title: original_title,
+          poster: poster_path,
         };
         return moviesArr.push(movie);
       });

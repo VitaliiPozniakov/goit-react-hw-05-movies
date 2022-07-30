@@ -1,18 +1,26 @@
-import { Item, Title, CustomLink } from './MovieCard.styled';
+import { Item, Title, CustomLink, Poster } from './MovieCard.styled';
 import propTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
+function MovieCard({ id, title, poster }) {
+  // console.log(poster);
 
-
-function MovieCard({ id, title }) {
-const location = useLocation()
-  return <>
-    {title && (<Item>
-      <CustomLink to={`/movies/${id}`} state={{ from: location }}>
-        <Title>{title}</Title>
-      </CustomLink>
-    </Item>)}</>
-  
+  const location = useLocation();
+  return (
+    <>
+      {title && (
+        <Item>
+          <CustomLink to={`/movies/${id}`} state={{ from: location }}>
+            <Poster
+              src={poster && `https://image.tmdb.org/t/p/w500/${poster}`}
+              alt={title}
+            />
+            <Title>{title}</Title>
+          </CustomLink>
+        </Item>
+      )}
+    </>
+  );
 }
 
 MovieCard.prototype = {

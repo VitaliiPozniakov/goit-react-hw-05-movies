@@ -1,6 +1,11 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.ul`
-list-style: square;
-  margin-left: 15px;
+@media (min-width: 768px) {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+
+  margin-top: 20px;
+}
 `;

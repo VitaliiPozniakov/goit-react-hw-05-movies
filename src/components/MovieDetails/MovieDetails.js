@@ -2,6 +2,7 @@
 import propTypes from 'prop-types';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Container from 'components/Container';
+import { TiArrowBack } from "react-icons/ti";
 
 import {
   BtnGoBack,
@@ -49,7 +50,7 @@ const userScore = voteAverage * 10
     <Container>
       <BtnGoBack type="button" onClick={onGoBackBtn}>
        
-        <Label>Go back</Label>
+        <Label><TiArrowBack/> Go back</Label>
       </BtnGoBack>
 
       <MainWrapper>
