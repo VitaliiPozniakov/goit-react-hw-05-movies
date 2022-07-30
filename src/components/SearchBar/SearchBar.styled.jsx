@@ -61,5 +61,9 @@ export const Btn = styled.button`
   &:focus {
     background-color: #3f51b5;
     color: #ffffffff;
+
+    @media (min-width: 768px) {
+      width: 100px;
+    }
   }
 `;

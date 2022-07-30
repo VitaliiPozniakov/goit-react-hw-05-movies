@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 export const Item = styled.li`
 @media (max-width: 767px) {
   margin-bottom: 50px;
+  margin: 0 auto;
 }
 @media (min-width: 768px) {
   display: flex;
