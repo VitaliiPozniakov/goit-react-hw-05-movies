@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 
 export const BtnGoBack = styled.button`
-padding: 5px 32px;
+padding: 5px 10px;
 color: black;
 background-color: #ffffffff;
 font-weight: 700;
