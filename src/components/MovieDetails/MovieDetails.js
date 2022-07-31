@@ -112,3 +112,4 @@ MovieDetails.prototype = {
 };
 
 export default MovieDetails;
+
