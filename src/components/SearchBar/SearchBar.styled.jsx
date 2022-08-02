@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   display: flex;
-  align-items: baseline;
+  align-content: center;
+  align-items: center;
 
   @media screen and (min-width: 768px) {
     width: 700px;
