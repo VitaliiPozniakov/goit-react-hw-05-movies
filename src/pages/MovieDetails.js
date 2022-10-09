@@ -1,14 +1,16 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
-import { useParams, Route, Routes } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+// import { useState, useEffect, lazy, Suspense } from 'react';
+import { useParams, Outlet } from 'react-router-dom';
+// import { useParams, Route, Routes } from 'react-router-dom';
 import * as API from '../services/api';
 import MovieDetails from 'components/MovieDetails';
-import Loader from 'components/Loader';
-const CastPage = lazy(() =>
-  import('./Cast.js' /* webpackChunkName: "cast-page" */)
-);
-const ReviewsPage = lazy(() =>
-  import('./Reviews.js' /* webpackChunkName: "review-page" */)
-);
+// import Loader from 'components/Loader';
+// const CastPage = lazy(() =>
+//   import('./Cast.js' /* webpackChunkName: "cast-page" */)
+// );
+// const ReviewsPage = lazy(() =>
+//   import('./Reviews.js' /* webpackChunkName: "review-page" */)
+// );
 
 function MovieDetailsPage() {
   // console.log(useParams())
@@ -51,12 +53,14 @@ function MovieDetailsPage() {
     <>
       {movieInfo && <MovieDetails movieInfo={movieInfo} />}
 
-      <Suspense fallback={<Loader />}>
+      {/* <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="cast" element={<CastPage />} />
           <Route path="reviews" element={<ReviewsPage />} />
         </Routes>
-      </Suspense>
+      </Suspense> */}
+      <Outlet/>
+
     </>
   );
 }
